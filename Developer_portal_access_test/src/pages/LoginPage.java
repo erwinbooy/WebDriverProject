@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import automationFramework.AbstractPage;
-import users.DeveloperUser;
+import profiles.User;
 
 public class LoginPage extends AbstractPage {
 
@@ -26,7 +26,7 @@ public class LoginPage extends AbstractPage {
 	/**
 	 * Enter user credentials and click SignIn
 	 */
-	public void signIn(DeveloperUser user){
+	public void signIn(User user){
 		// First we wait for the page to have been built
 		waitForElementPresent(By.id("handle"));
 		WebElement userName = findElementOnPage(By.id(field_userid));

@@ -1,15 +1,15 @@
-package users;
+package profiles;
 
 /**
  * Simple dto to store article information
  * @author Erwin
  */
-public class DeveloperUser {
+public class User {
 
 	private String username = null;
 	private String userpwd = null;
 	private String userid = null;
-	private DeveloperProfile profile = null;
+	private Profile profile = null;
 	public String getUsername() {
 		return username;
 	}
@@ -28,10 +28,10 @@ public class DeveloperUser {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public DeveloperProfile getProfile() {
+	public Profile getProfile() {
 		return profile;
 	}
-	public void setProfile(DeveloperProfile profile) {
+	public void setProfile(Profile profile) {
 		this.profile = profile;
 	}
 }

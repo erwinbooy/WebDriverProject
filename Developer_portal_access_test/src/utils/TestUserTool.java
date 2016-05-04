@@ -9,9 +9,9 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import users.DeveloperProfile1;
-import users.DeveloperProfile2;
-import users.DeveloperUser;
+import profiles.Profile1;
+import profiles.Profile2;
+import profiles.User;
 
 
 /**
@@ -34,8 +34,8 @@ public class TestUserTool {
 	 * 
 	 * @return List<String> with articleUrls
 	 */
-	public static List<DeveloperUser> getTestUsers(){
-		ArrayList<DeveloperUser> users = new ArrayList<>();
+	public static List<User> getTestUsers(){
+		ArrayList<User> users = new ArrayList<>();
 		BufferedReader dbReader = null;
 		String line = null;
 		String fields[] = null;
@@ -44,14 +44,14 @@ public class TestUserTool {
 			dbReader = new BufferedReader(new FileReader(testuser_file));
 			while((line = dbReader.readLine()) != null){
 				fields = line.split(",");
-				DeveloperUser user = new DeveloperUser();
+				User user = new User();
 				user.setUserid(fields[0]);
 				user.setUserpwd(fields[1]);
 				user.setUsername(fields[2]);
 				if (fields[3].equals("1")){
-					user.setProfile(new DeveloperProfile1());
+					user.setProfile(new Profile1());
 				} else {
-					user.setProfile(new DeveloperProfile2());
+					user.setProfile(new Profile2());
 				}
 				users.add(user);
 			}

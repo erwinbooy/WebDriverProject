@@ -1,6 +1,6 @@
-package users;
+package profiles;
 
-import pages.DeveloperPage;
+import pages.Page;
 import pages.NavigationSoftwarePage;
 import pages.OnlineNavigationPage;
 
@@ -14,7 +14,7 @@ import pages.OnlineNavigationPage;
  *
  *  Menu links
  *  - My Account			Yes
- *  - Dashboard				Yes
+ *  - Dashboard				No
  *  
  *  Menu items
  *  - Home					Yes
@@ -22,7 +22,7 @@ import pages.OnlineNavigationPage;
  *  - Navigation Software	Yes
  *  - Real-Time Maps		Yes
  *  - Bridge				Yes	
- *  - Sports				Yes
+ *  - Sports				No
  *  
  *  Sidebar Online Navigation
  *  - Overview				Yes
@@ -36,9 +36,9 @@ import pages.OnlineNavigationPage;
  *  
  *  Sidebar Navigation Software
  *  - Navkit				Yes
- *  - Downloads				Yes
- *  - FAQ					Yes
- *  - Integration Kit		Yes
+ *  - Downloads				No
+ *  - FAQ					No
+ *  - Integration Kit		No
  *  
  *  Sidebar Real-Time Maps
  *  - Overvew				Yes
@@ -49,39 +49,40 @@ import pages.OnlineNavigationPage;
  *  Sidebar Bridge
  *  - A lot!!!				Yes
  *  
- *  Sidebar Sports
- *  - Overview				Yes
- *  - Camera Media Server	Yes
- *  - MySports Cloud		Yes
+ *  Sidebar Sports			No
+ *  - Overview				No
+ *  - Camera Media Server	No
+ *  - MySports Cloud		No
  *  
  *  Footer
- *  - Customer Support		Yes
+ *  - Customer Support		No
+ * 
+ * @return
  */
-public class DeveloperProfile1 extends AbstractDeveloperProfile{
+public class Profile2 extends AbstractProfile{
 	
+	/**
+	 * Method that checks if this profile has the correct links
+	 * This profile should have the following links
+	 */
+	public boolean hasCorrectLinks(User user, Page myPage){
+		return super.hasCorrectLinks(user, myPage, true, false);
+	}
+	
+	/**
+	 * Method that checks if this profile has the correct links
+	 * This profile should have the following links
+	 */
+	public boolean hasCorrectMenuItems(User user, Page myPage){
+		return super.hasCorrectMenuItems(user, myPage, true, true, true, true, true, false);
+	}
+
+	@Override
 	/**
 	 * We will use the basic logic from the Abstract class
 	 */
-	public boolean isLoggedIn(DeveloperUser myUser, DeveloperPage myPage) {
+	public boolean isLoggedIn(User myUser, Page myPage) {
 		return super.isLoggedIn(myUser, myPage);
-	}
-
-	/**
-	 * Method that checks if this profile has the correct links
-	 *  
-	 * @return true/false
-	 */
-	public boolean hasCorrectLinks(DeveloperUser user, DeveloperPage myPage){
-		return super.hasCorrectLinks(user, myPage, true, true);
-	}
-
-	/**
-	 * Method that checks if this profile has the correct menu items
-	 *  
-	 * @return true/false
-	 */
-	public boolean hasCorrectMenuItems(DeveloperUser user, DeveloperPage myPage){
-		return super.hasCorrectMenuItems(user, myPage, true, true, true, true, true, true);
 	}
 
 	/**
@@ -89,7 +90,7 @@ public class DeveloperProfile1 extends AbstractDeveloperProfile{
 	 *  
 	 * @return true/false
 	 */
-	public boolean hasCorrectSideBarItemsON(DeveloperUser user, OnlineNavigationPage myPage){
+	public boolean hasCorrectSideBarItemsON(User user, OnlineNavigationPage myPage){
 		return super.hasCorrectSidebarItemsON(user, myPage, true, true, true, true, true, true, true, true);
 	}
 
@@ -98,7 +99,7 @@ public class DeveloperProfile1 extends AbstractDeveloperProfile{
 	 *  
 	 * @return true/false
 	 */
-	public boolean hasCorrectSideBarItemsNS(DeveloperUser user, NavigationSoftwarePage myPage){
-		return super.hasCorrectSidebarItemsNS(user, myPage, true, true, true, true, true);
+	public boolean hasCorrectSideBarItemsNS(User user, NavigationSoftwarePage myPage){
+		return super.hasCorrectSidebarItemsNS(user, myPage, true, true, false, false, false);
 	}
 }

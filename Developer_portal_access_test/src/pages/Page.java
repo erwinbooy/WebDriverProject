@@ -1,6 +1,6 @@
 package pages;
 
-public interface DeveloperPage {
+public interface Page {
 	public String getSignInText();
 	public String getSignOutText();
 	public boolean hasAccountLink();

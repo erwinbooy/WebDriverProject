@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pages.DeveloperPage;
+import pages.Page;
 
 /**
  * @author Erwin
@@ -16,7 +16,7 @@ import pages.DeveloperPage;
  *         Abstract class that performs the standard stuff that a Page needs It
  *         implements the HoyhoyPage interface
  */
-public abstract class AbstractPage implements DeveloperPage{
+public abstract class AbstractPage implements Page{
 
 	public WebDriver driver = null;
 	public WebDriverWait wait = null;
@@ -268,5 +268,21 @@ public abstract class AbstractPage implements DeveloperPage{
 	public void clickMenuItemSports(){
 		// First we wait for the page to have been built
 		waitForElementIsClickable(By.xpath(menu_items + menu_item_sports)).click();
+	}
+	
+	/**
+	 * Click on the link Sign In
+	 */
+	public void clickSignIn(){
+		// First we wait for the page to have been built
+		waitForElementIsClickable(By.xpath(link_signin)).click();
+	}
+
+	/**
+	 * Click on the link Out In
+	 */
+	public void clickSignOut(){
+		// First we wait for the page to have been built
+		waitForElementIsClickable(By.xpath(link_signout)).click();
 	}
 }

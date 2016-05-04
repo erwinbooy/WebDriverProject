@@ -1,6 +1,6 @@
-package users;
+package profiles;
 
-import pages.DeveloperPage;
+import pages.Page;
 import pages.NavigationSoftwarePage;
 import pages.OnlineNavigationPage;
 
@@ -55,7 +55,7 @@ import pages.OnlineNavigationPage;
  * 
  * @author Erwin Booij
  */
-public abstract class AbstractDeveloperProfile implements DeveloperProfile{
+public abstract class AbstractProfile implements Profile{
 	
 	/**
 	 * Method to verify that the user is logged in
@@ -66,7 +66,7 @@ public abstract class AbstractDeveloperProfile implements DeveloperProfile{
 	 * @param myUser
 	 * @return
 	 */
-	public boolean isLoggedIn(DeveloperUser myUser, DeveloperPage myPage){
+	public boolean isLoggedIn(User myUser, Page myPage){
 		// Verify that the name is mentioned on the page
 		String text = myPage.getSignInText();
 		if (text.equalsIgnoreCase("Signed in as " + myUser.getUsername())){
@@ -92,7 +92,7 @@ public abstract class AbstractDeveloperProfile implements DeveloperProfile{
 	 * @param myPage
 	 * @return true/false
 	 */
-	public boolean hasCorrectLinks(DeveloperUser user, DeveloperPage myPage, boolean account, boolean dashboard){
+	public boolean hasCorrectLinks(User user, Page myPage, boolean account, boolean dashboard){
 		// First we test the links at the top
 		if (!myPage.hasAccountLink() == account){
 			return false;
@@ -118,7 +118,7 @@ public abstract class AbstractDeveloperProfile implements DeveloperProfile{
 	 * @param myPage
 	 * @return true/false
 	 */
-	public boolean hasCorrectMenuItems(DeveloperUser user, DeveloperPage myPage, boolean home, boolean on, boolean ns, boolean rtm, boolean bridge, boolean sports){
+	public boolean hasCorrectMenuItems(User user, Page myPage, boolean home, boolean on, boolean ns, boolean rtm, boolean bridge, boolean sports){
 
 		// Then we test the Menu items at the top
 		if(!myPage.hasMenuItemHome() == home){
@@ -159,7 +159,7 @@ public abstract class AbstractDeveloperProfile implements DeveloperProfile{
 	 * @param myPage
 	 * @return true/false
 	 */
-	public boolean hasCorrectSidebarItemsON(DeveloperUser user, OnlineNavigationPage myPage, boolean ov, boolean or, boolean om, boolean os, boolean ot, boolean maps,boolean ra, boolean ae){
+	public boolean hasCorrectSidebarItemsON(User user, OnlineNavigationPage myPage, boolean ov, boolean or, boolean om, boolean os, boolean ot, boolean maps,boolean ra, boolean ae){
 
 		if(!myPage.hasSideBarItemOverview() == ov){
 			return false;
@@ -200,7 +200,7 @@ public abstract class AbstractDeveloperProfile implements DeveloperProfile{
 	 * @param myPage
 	 * @return true/false
 	 */
-	public boolean hasCorrectSidebarItemsNS(DeveloperUser user, NavigationSoftwarePage myPage, boolean nk, boolean dl, boolean doc, boolean faq, boolean ik){
+	public boolean hasCorrectSidebarItemsNS(User user, NavigationSoftwarePage myPage, boolean nk, boolean dl, boolean doc, boolean faq, boolean ik){
 
 		if(!myPage.hasSideBarItemNavKit() == nk){
 			return false;

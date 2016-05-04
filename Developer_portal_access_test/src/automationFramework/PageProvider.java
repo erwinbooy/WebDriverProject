@@ -2,7 +2,7 @@ package automationFramework;
 
 import org.openqa.selenium.WebDriver;
 
-import pages.DeveloperHomePage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.NavigationSoftwarePage;
 import pages.OnlineNavigationPage;
@@ -19,8 +19,8 @@ public class PageProvider {
 		PageProvider.driver = driver;
 	}
 
-	public static DeveloperHomePage getDeveloperHomePage() {
-		return new DeveloperHomePage(driver);
+	public static HomePage getDeveloperHomePage() {
+		return new HomePage(driver);
 	}
 
 	public static LoginPage getLoginPage() {

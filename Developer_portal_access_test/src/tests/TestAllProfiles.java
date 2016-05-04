@@ -7,15 +7,15 @@ import org.junit.Test;
 
 import automationFramework.PageProvider;
 import automationFramework.TestBase;
-import pages.DeveloperHomePage;
+import pages.HomePage;
 import pages.LoginPage;
-import users.DeveloperUser;
+import profiles.User;
 import utils.TestUserTool;
 
-public class TestProfiles extends TestBase {
+public class TestAllProfiles extends TestBase {
 
 	/**
-	 * Sign in with TomTom Developer portal
+	 * Test Profile 1
 	 * 
 	 * @throws InterruptedException
 	 */
@@ -23,14 +23,14 @@ public class TestProfiles extends TestBase {
 	public void test() throws InterruptedException {
 		
 		// Get the users from the Database
-		List<DeveloperUser> users = TestUserTool.getTestUsers();
+		List<User> users = TestUserTool.getTestUsers();
 
 		// Now loop through all the users and perform the tests
-		Iterator<DeveloperUser> iter = users.iterator();
-		DeveloperUser myUser = null;
+		Iterator<User> iter = users.iterator();
+		User myUser = null;
 		while (iter.hasNext()){
 			// Go to the FD page and get all article Urls
-			DeveloperHomePage homePage = PageProvider.getDeveloperHomePage();
+			HomePage homePage = PageProvider.getDeveloperHomePage();
 			homePage.OpenPage();
 			homePage.clickSignIn();
 			
