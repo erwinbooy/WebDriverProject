@@ -5,12 +5,15 @@ import java.awt.Desktop;
 import java.io.File;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
+
 import automationFramework.PageProvider;
 import automationFramework.TestBase;
 import pages.FDPage;
@@ -50,7 +53,6 @@ public class GetArticleFromFD extends TestBase {
 		// Loop through all articles and find them in google and write them to a
 		Iterator<String> iter = myArticleUrls.iterator();
 		int newArticleCounter = 0;
-		int remainder = 0;
 		while (iter.hasNext()) {
 			String articleUrl = iter.next();
 			// We first check if the article already exists. 

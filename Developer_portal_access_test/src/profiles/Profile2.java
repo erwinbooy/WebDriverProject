@@ -1,8 +1,8 @@
 package profiles;
 
-import pages.Page;
 import pages.NavigationSoftwarePage;
 import pages.OnlineNavigationPage;
+import pages.Page;
 
 /**
  * Developer Profile one

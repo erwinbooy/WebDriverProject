@@ -3,8 +3,10 @@ package pages;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import automationFramework.AbstractPage;
 
 public class FDPage extends AbstractPage {
